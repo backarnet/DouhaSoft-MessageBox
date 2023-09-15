@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DouhaSoftMessageBox", "WindowsFormsApp1\DouhaSoftMessageBox.csproj", "{2BF648A3-0D2B-41B6-87AF-05D05CCD349E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BF648A3-0D2B-41B6-87AF-05D05CCD349E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BF648A3-0D2B-41B6-87AF-05D05CCD349E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BF648A3-0D2B-41B6-87AF-05D05CCD349E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BF648A3-0D2B-41B6-87AF-05D05CCD349E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F27E384-469C-4F15-B7B7-18C6BF32194A}
+	EndGlobalSection
+EndGlobal
