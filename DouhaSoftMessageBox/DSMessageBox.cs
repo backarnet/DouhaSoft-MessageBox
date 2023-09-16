@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        public DialogResult Show(string text, Icon icon, string caption = "", string acceptText = "Accept", string cancelText = "Cancel", bool isRTL = false)
+        private DialogResult Show(string text, Icon icon, string caption = "", string acceptText = "", string cancelText = "", bool isRTL = false)
         {
             if (isRTL)
             {
@@ -26,11 +26,68 @@ namespace WindowsFormsApp1
             pictureIcon.Image = icon.ToBitmap();
             labelText.Text = text;
             Text = caption;
-            btnAccept.Text = acceptText;
-            btnCancel.Text = cancelText;
-            MinimumSize = new Size(60 + btnAccept.Width + btnCancel.Width, 175);
+            if (acceptText.Trim() == "" && cancelText.Trim() == "")
+            {
+                throw new Exception("");
+            }
+            else
+            {
+                if (acceptText != "")
+                {
+                    btnAccept.Text = acceptText;
+                }
+                else
+                {
+                    btnAccept.Visible = false;
+                    btnCancel.Dock = DockStyle.None;
+                    btnCancel.Left = Width / 2 - (btnCancel.Width / 2) - 10;
+                    separator.Visible = false;
+                }
+                if (cancelText != "")
+                {
+                    btnCancel.Text = cancelText;
+                }
+                else
+                {
+                    btnCancel.Visible = false;
+                    btnAccept.Dock = DockStyle.None;
+                    btnAccept.Left = Width / 2 - (btnAccept.Width / 2) - 10;
+                    separator.Visible = false;
+                }
+            }
+            MinimumSize = new Size(67 + btnAccept.Width + btnCancel.Width, 175);
             ShowDialog();
             return _result;
+        }
+
+        public DialogResult ShowQuestion(string text, string caption, string acceptText, string cancelText)
+        {
+            return Show(text, SystemIcons.Question, caption, acceptText: acceptText, cancelText: cancelText);
+        }
+
+        public DialogResult ShowQuestionRtl(string text, string caption, string acceptText, string cancelText)
+        {
+            return Show(text, SystemIcons.Question, caption, acceptText: acceptText, cancelText: cancelText, isRTL: true);
+        }
+
+        public DialogResult ShowInfo(string text, string caption, string acceptText)
+        {
+            return Show(text, SystemIcons.Information, caption, acceptText: acceptText);
+        }
+
+        public DialogResult ShowInfoRtl(string text, string caption, string acceptText)
+        {
+            return Show(text, SystemIcons.Information, caption, acceptText: acceptText, isRTL: true);
+        }
+
+        public DialogResult ShowWarn(string text, string caption, string acceptText)
+        {
+            return Show(text, SystemIcons.Warning, caption, acceptText: acceptText);
+        }
+
+        public DialogResult ShowWarnRtl(string text, string caption, string acceptText)
+        {
+            return Show(text, SystemIcons.Warning, caption, acceptText: acceptText, isRTL: true);
         }
 
         private void btnAccept_Click(object sender, EventArgs e)

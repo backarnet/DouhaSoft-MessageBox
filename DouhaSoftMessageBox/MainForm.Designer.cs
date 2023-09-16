@@ -28,25 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnQuestion = new System.Windows.Forms.Button();
+            this.btnWarning = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button2
+            // btnQuestion
             // 
-            this.button2.Location = new System.Drawing.Point(136, 113);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 46);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Custom MessageBox";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnQuestion.Location = new System.Drawing.Point(136, 98);
+            this.btnQuestion.Name = "btnQuestion";
+            this.btnQuestion.Size = new System.Drawing.Size(126, 35);
+            this.btnQuestion.TabIndex = 2;
+            this.btnQuestion.Text = "Question";
+            this.btnQuestion.UseVisualStyleBackColor = true;
+            this.btnQuestion.Click += new System.EventHandler(this.btnQuestion_Click);
+            // 
+            // btnWarning
+            // 
+            this.btnWarning.Location = new System.Drawing.Point(136, 140);
+            this.btnWarning.Name = "btnWarning";
+            this.btnWarning.Size = new System.Drawing.Size(126, 35);
+            this.btnWarning.TabIndex = 3;
+            this.btnWarning.Text = "Warning";
+            this.btnWarning.UseVisualStyleBackColor = true;
+            this.btnWarning.Click += new System.EventHandler(this.btnWarning_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(399, 272);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnWarning);
+            this.Controls.Add(this.btnQuestion);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
@@ -55,7 +67,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnQuestion;
+        private System.Windows.Forms.Button btnWarning;
     }
 }
 
